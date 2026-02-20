@@ -1,0 +1,23 @@
+DATABASE REPORT - 2026-02-19T10:42:54.198Z
+=========================================
+
+[ COLLECTION: USERS ]
+Total Count: 1
+
+  1. ID: 6996e45701bfdd508fdc654a
+     Name: Mallikarjuna Reddy Vasantha
+     Email: mallikarjunavasantha9@gmail.com
+     Role: user
+     IsDoctor: false
+
+-----------------------------------------
+
+[ COLLECTION: DOCTORS ]
+Total Count: 0
+
+-----------------------------------------
+
+[ COLLECTION: APPOINTMENTS ]
+Total Count: 0
+
+=========================================

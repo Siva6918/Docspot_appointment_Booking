@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Toastify Strict Red overrides */
+    --toastify-color-light: #FFFFFF;
+    --toastify-color-dark: #991B1B;
+    --toastify-color-info: #DC2626;
+    --toastify-color-success: #DC2626;
+    /* No Green allowed */
+    --toastify-color-warning: #991B1B;
+    /* No Yellow allowed */
+    --toastify-color-error: #991B1B;
+    --toastify-text-color-light: #991B1B;
+    /* Dark Red text */
+}
+
+@layer base {
+    body {
+        /* Background: Off-white (brand-offWhite from config) */
+        @apply font-sans antialiased overflow-x-hidden;
+        background-color: theme('colors.brand.offWhite');
+        color: theme('colors.brand.dark');
+    }
+
+    /* Strict Text Colors */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: theme('colors.brand.dark');
+    }
+
+    p,
+    span,
+    div {
+        color: rgba(153, 27, 27, 0.8);
+    }
+}
+
+@layer components {
+    .glass-card {
+        @apply bg-white border border-brand-red/10 shadow-glass rounded-2xl;
+    }
+
+    .btn-primary {
+        @apply px-6 py-3 font-bold text-white bg-brand-red rounded-xl hover:bg-brand-dark transition-all duration-300 shadow-glow-soft hover:shadow-glow;
+    }
+
+    .btn-secondary {
+        @apply px-6 py-3 font-bold text-brand-red bg-white border border-brand-red rounded-xl hover:bg-brand-soft transition-all duration-300;
+    }
+
+    .input-field {
+        @apply w-full bg-white border border-brand-red/20 rounded-2xl px-4 py-3 text-brand-dark placeholder-brand-red/40 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-all;
+    }
+}
+
+/* Custom Red Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFF5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FCA5A5;
+    /* Light Red */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #DC2626;
+    /* Brand Red */
+}
