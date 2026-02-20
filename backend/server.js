@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://your-vercel-frontend.vercel.app"
+    "https://docspot-appointment-booking.vercel.app"
   ],
   credentials: true
 }));

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:5000/api', // Update if backend runs elsewhere
+    baseURL: import.meta.env.VITE_API_BASE_URL, // Update if backend runs elsewhere
 });
 
 // Add a request interceptor to attach token
