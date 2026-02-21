@@ -53,7 +53,7 @@ const AuthLayout = ({ children, title, subtitle, illustration }) => {
 
                 {/* RIGHT SIDE (Scrollable Form Area) */}
                 <motion.div
-                    className="flex items-center justify-center px-6 py-12 overflow-y-auto"
+                    className="flex items-center justify-center px-4 sm:px-6 py-8 sm:py-12 overflow-y-auto"
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
@@ -61,7 +61,7 @@ const AuthLayout = ({ children, title, subtitle, illustration }) => {
                     <div className="w-full max-w-2xl">
                         <div className="bg-white/80 backdrop-blur-xl 
                             border border-brand-red/10 
-                            shadow-xl rounded-3xl p-8">
+                            shadow-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
                             {children}
                         </div>
                     </div>

@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="bg-brand-offWhite border-t border-brand-red/10 pt-16 pb-8 relative z-10">
-            <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <footer className="bg-brand-offWhite border-t border-brand-red/10 pt-10 sm:pt-16 pb-6 sm:pb-8 relative z-10">
+            <div className="container mx-auto px-4 sm:px-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
                     {/* Brand */}
-                    <div className="col-span-1 md:col-span-2 space-y-4">
+                    <div className="col-span-1 sm:col-span-2 md:col-span-2 space-y-4">
                         <div className="flex items-center gap-2">
                             <div className="w-8 h-8 bg-brand-red rounded-lg flex items-center justify-center shadow-lg">
                                 <span className="text-white font-bold text-lg">D</span>
                             </div>
                             <span className="text-xl font-bold text-brand-dark">DocSpot</span>
                         </div>
-                        <p className="text-brand-dark/70 max-w-sm">
+                        <p className="text-brand-dark/70 max-w-sm text-sm sm:text-base">
                             The world's first Metaverse-integrated healthcare appointment system.
                             Secure, decentralized, and instant access to top medical professionals.
                         </p>
@@ -42,7 +42,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="border-t border-brand-red/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div className="border-t border-brand-red/10 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-brand-dark/50 text-sm">
                         © {new Date().getFullYear()} DocSpot Health. All rights reserved.
                     </p>

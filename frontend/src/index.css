@@ -59,6 +59,10 @@
     .input-field {
         @apply w-full bg-white border border-brand-red/20 rounded-2xl px-4 py-3 text-brand-dark placeholder-brand-red/40 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-all;
     }
+
+    .input-glass {
+        @apply w-full bg-white border border-brand-red/20 rounded-xl px-4 py-3 text-sm text-brand-dark placeholder-brand-red/40 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-all;
+    }
 }
 
 /* Custom Red Scrollbar */

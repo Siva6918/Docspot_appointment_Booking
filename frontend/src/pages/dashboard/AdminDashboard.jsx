@@ -116,30 +116,30 @@ const AdminDashboard = () => {
     };
 
     return (
-        <div className="space-y-8 relative">
-            <div className="flex justify-between items-center">
-                <h2 className="text-3xl font-bold text-brand-dark flex items-center gap-3">
-                    <UserIcon className="w-8 h-8 text-brand-red" />
+        <div className="space-y-6 sm:space-y-8 relative">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-dark flex items-center gap-2 sm:gap-3">
+                    <UserIcon className="w-6 h-6 sm:w-8 sm:h-8 text-brand-red" />
                     <span>Admin Control Center</span>
                 </h2>
-                <div className="flex gap-4">
+                <div className="flex flex-wrap gap-2 sm:gap-4">
                     <div className="bg-brand-offWhite p-1 rounded-xl flex gap-1">
                         <button
-                            className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${activeTab === 'doctors' ? 'bg-brand-red text-white shadow-glow-soft' : 'text-brand-dark/70 hover:text-brand-dark'}`}
+                            className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all ${activeTab === 'doctors' ? 'bg-brand-red text-white shadow-glow-soft' : 'text-brand-dark/70 hover:text-brand-dark'}`}
                             onClick={() => setActiveTab('doctors')}
                         >
                             Doctors
                         </button>
                         <button
-                            className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${activeTab === 'users' ? 'bg-brand-red text-white shadow-glow-soft' : 'text-brand-dark/70 hover:text-brand-dark'}`}
+                            className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all ${activeTab === 'users' ? 'bg-brand-red text-white shadow-glow-soft' : 'text-brand-dark/70 hover:text-brand-dark'}`}
                             onClick={() => setActiveTab('users')}
                         >
                             Users
                         </button>
                     </div>
                     {activeTab === 'doctors' && (
-                        <NeonButton variant="primary" onClick={() => setShowModal(true)} className="flex items-center gap-2">
-                            <PlusIcon className="w-5 h-5" /> Add New Doctor
+                        <NeonButton variant="primary" onClick={() => setShowModal(true)} className="flex items-center gap-2 text-xs sm:text-sm">
+                            <PlusIcon className="w-4 h-4 sm:w-5 sm:h-5" /> <span className="hidden sm:inline">Add New</span> Doctor
                         </NeonButton>
                     )}
                 </div>
@@ -215,23 +215,24 @@ const AdminDashboard = () => {
             ) : (
                 <div>
                     <h4 className="text-xl font-bold text-brand-dark mb-6 border-b border-brand-red/10 pb-2">Registered Users</h4>
-                    <div className="overflow-x-auto bg-white rounded-xl border border-brand-red/10 shadow-sm">
+                    {/* Desktop table */}
+                    <div className="hidden sm:block overflow-x-auto bg-white rounded-xl border border-brand-red/10 shadow-sm">
                         <table className="w-full text-left text-brand-dark">
                             <thead className="text-xs uppercase bg-brand-offWhite text-brand-dark/60">
                                 <tr>
-                                    <th className="px-6 py-3">Name</th>
-                                    <th className="px-6 py-3">Email</th>
-                                    <th className="px-6 py-3">Role</th>
-                                    <th className="px-6 py-3 text-right">Actions</th>
+                                    <th className="px-4 md:px-6 py-3">Name</th>
+                                    <th className="px-4 md:px-6 py-3">Email</th>
+                                    <th className="px-4 md:px-6 py-3">Role</th>
+                                    <th className="px-4 md:px-6 py-3 text-right">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {users.map(user => (
                                     <tr key={user._id} className="border-b border-brand-red/5 hover:bg-brand-offWhite transition-colors">
-                                        <td className="px-6 py-4 font-bold text-brand-dark">{user.name}</td>
-                                        <td className="px-6 py-4 text-brand-dark/80">{user.email}</td>
-                                        <td className="px-6 py-4 capitalize text-brand-dark/80">{user.isDoctor ? 'Doctor (Pending)' : 'Patient'}</td>
-                                        <td className="px-6 py-4 text-right">
+                                        <td className="px-4 md:px-6 py-4 font-bold text-brand-dark">{user.name}</td>
+                                        <td className="px-4 md:px-6 py-4 text-brand-dark/80 truncate max-w-[200px]">{user.email}</td>
+                                        <td className="px-4 md:px-6 py-4 capitalize text-brand-dark/80">{user.isDoctor ? 'Doctor (Pending)' : 'Patient'}</td>
+                                        <td className="px-4 md:px-6 py-4 text-right">
                                             <button
                                                 onClick={() => handleDeleteUser(user._id)}
                                                 className="text-brand-red hover:text-brand-light hover:bg-brand-soft px-3 py-1 rounded-lg transition-colors text-sm font-bold"
@@ -248,6 +249,30 @@ const AdminDashboard = () => {
                                 )}
                             </tbody>
                         </table>
+                    </div>
+
+                    {/* Mobile card layout */}
+                    <div className="sm:hidden space-y-3">
+                        {users.map(user => (
+                            <div key={user._id} className="bg-white rounded-xl border border-brand-red/10 shadow-sm p-4">
+                                <div className="flex justify-between items-start">
+                                    <div className="min-w-0 flex-1">
+                                        <p className="font-bold text-brand-dark truncate">{user.name}</p>
+                                        <p className="text-sm text-brand-dark/80 truncate">{user.email}</p>
+                                        <p className="text-xs text-brand-dark/60 capitalize mt-1">{user.isDoctor ? 'Doctor (Pending)' : 'Patient'}</p>
+                                    </div>
+                                    <button
+                                        onClick={() => handleDeleteUser(user._id)}
+                                        className="text-brand-red hover:bg-brand-soft px-3 py-1 rounded-lg transition-colors text-sm font-bold ml-2 shrink-0"
+                                    >
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
+                        {users.length === 0 && (
+                            <p className="text-center py-8 text-brand-dark/50">No users found</p>
+                        )}
                     </div>
                 </div>
             )}

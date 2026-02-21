@@ -56,25 +56,25 @@ const DoctorDashboard = () => {
     };
 
     return (
-        <div className="space-y-8">
-            <div className="flex justify-between items-end">
+        <div className="space-y-6 sm:space-y-8">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-2 sm:gap-0">
                 <div>
-                    <h2 className="text-3xl font-bold text-brand-dark mb-2">Doctor Console</h2>
-                    <p className="text-brand-dark/70">Welcome back, Dr. <span className="text-brand-red">{user?.name}</span></p>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-brand-dark mb-1 sm:mb-2">Doctor Console</h2>
+                    <p className="text-sm sm:text-base text-brand-dark/70">Welcome back, Dr. <span className="text-brand-red">{user?.name}</span></p>
                 </div>
-                <div className="text-right hidden md:block">
-                    <p className="text-sm text-brand-dark/50">Today's Date</p>
-                    <p className="text-xl font-bold text-brand-dark">{new Date().toLocaleDateString()}</p>
+                <div className="text-left sm:text-right">
+                    <p className="text-xs sm:text-sm text-brand-dark/50">Today's Date</p>
+                    <p className="text-base sm:text-xl font-bold text-brand-dark">{new Date().toLocaleDateString()}</p>
                 </div>
             </div>
 
             <div>
-                <h4 className="text-xl font-bold text-brand-dark mb-6 border-b border-brand-red/10 pb-2 flex items-center gap-3">
-                    <CalendarIcon className="w-6 h-6 text-brand-red" />
+                <h4 className="text-lg sm:text-xl font-bold text-brand-dark mb-4 sm:mb-6 border-b border-brand-red/10 pb-2 flex items-center gap-2 sm:gap-3">
+                    <CalendarIcon className="w-5 h-5 sm:w-6 sm:h-6 text-brand-red" />
                     Pending Appointments
                 </h4>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                     {appointments.map(app => (
                         <GlassCard key={app._id} className="border-l-4 border-l-brand-red">
                             <div className="flex justify-between items-start mb-4">

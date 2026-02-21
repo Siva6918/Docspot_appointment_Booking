@@ -15,7 +15,7 @@ import DoctorImage from './Doctor.jpg';
 const FeatureSection = ({ title, description, image, icon: Icon, reverse, bg }) => {
     return (
         <motion.div
-            className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 py-24 px-6 ${bg ? bg : 'bg-white'}`}
+            className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-6 sm:gap-8 lg:gap-12 py-12 sm:py-16 lg:py-24 px-4 sm:px-6 ${bg ? bg : 'bg-white'}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -27,16 +27,16 @@ const FeatureSection = ({ title, description, image, icon: Icon, reverse, bg }) 
                     <img
                         src={image}
                         alt={title}
-                        className="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-48 sm:h-64 lg:h-80 object-cover transform group-hover:scale-105 transition-transform duration-500"
                     />
                 </div>
             </div>
-            <div className="flex-1 text-left space-y-6">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center border border-brand-red/20 shadow-glow-soft">
-                    <span className="text-3xl text-brand-red font-bold">#</span>
+            <div className="flex-1 text-left space-y-4 sm:space-y-6">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-2xl flex items-center justify-center border border-brand-red/20 shadow-glow-soft">
+                    <span className="text-2xl sm:text-3xl text-brand-red font-bold">#</span>
                 </div>
-                <h3 className="text-4xl font-bold text-brand-dark">{title}</h3>
-                <p className="text-lg text-brand-dark/80 leading-relaxed">{description}</p>
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-brand-dark">{title}</h3>
+                <p className="text-base sm:text-lg text-brand-dark/80 leading-relaxed">{description}</p>
                 <div className="h-1 w-20 bg-brand-red rounded-full"></div>
             </div>
         </motion.div>
@@ -52,68 +52,68 @@ const Home = () => {
             <section className="relative min-h-screen flex items-center pt-20 bg-white">
                 {/* Subtle Brand Background Blobs */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                    <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-soft rounded-full blur-[120px] opacity-60"></div>
-                    <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-brand-offWhite rounded-full blur-[100px]"></div>
+                    <div className="absolute top-1/4 left-1/4 w-[250px] sm:w-[400px] lg:w-[500px] h-[250px] sm:h-[400px] lg:h-[500px] bg-brand-soft rounded-full blur-[80px] sm:blur-[120px] opacity-60"></div>
+                    <div className="absolute bottom-1/4 right-1/4 w-[300px] sm:w-[450px] lg:w-[600px] h-[300px] sm:h-[450px] lg:h-[600px] bg-brand-offWhite rounded-full blur-[80px] sm:blur-[100px]"></div>
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="container mx-auto px-4 sm:px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="inline-block py-2 px-4 rounded-full bg-brand-offWhite border border-brand-red/10 text-brand-red text-sm font-bold tracking-wider mb-8">
+                        <span className="inline-block py-1.5 sm:py-2 px-3 sm:px-4 rounded-full bg-brand-offWhite border border-brand-red/10 text-brand-red text-xs sm:text-sm font-bold tracking-wider mb-4 sm:mb-8">
                             PREMIUM HEALTHCARE v2.0
                         </span>
-                        <h1 className="text-6xl md:text-7xl font-bold text-brand-dark mb-6 leading-tight">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-brand-dark mb-4 sm:mb-6 leading-tight">
                             Advanced Care. <br />
                             <span className="text-brand-red">Simplified.</span>
                         </h1>
-                        <p className="text-xl text-brand-dark/70 mb-10 max-w-lg leading-relaxed">
+                        <p className="text-base sm:text-lg lg:text-xl text-brand-dark/70 mb-6 sm:mb-10 max-w-lg leading-relaxed">
                             Experience the red-carpet standard of digital healthcare.
                             Secure, efficient, and strictly professional.
                         </p>
-                        <div className="flex flex-wrap gap-4">
+                        <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                             <Link to="/register">
-                                <NeonButton variant="primary" className="px-8 py-4 text-lg">Get Started</NeonButton>
+                                <NeonButton variant="primary" className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg">Get Started</NeonButton>
                             </Link>
                             <Link to="/apply-doctor">
-                                <NeonButton variant="primary" className="px-8 py-4 text-lg">Apply as Doctor</NeonButton>
+                                <NeonButton variant="primary" className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg">Apply as Doctor</NeonButton>
                             </Link>
                         </div>
                     </motion.div>
 
                     <motion.div
-                        className="relative"
+                        className="relative mt-8 lg:mt-0"
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8 }}
                     >
                         {/* Hero Image / Hologram */}
-                        <div className="relative w-full aspect-square max-w-lg mx-auto">
-                            <div className="absolute inset-0 bg-brand-red/5 rounded-full blur-[60px]"></div>
+                        <div className="relative w-full aspect-square max-w-xs sm:max-w-sm lg:max-w-lg mx-auto">
+                            <div className="absolute inset-0 bg-brand-red/5 rounded-full blur-[40px] sm:blur-[60px]"></div>
                             <img
                                 src={DoctorImage}
                                 alt="Doctor Hologram"
                                 className="relative z-10 w-full h-full object-contain rounded-full"
                             />
-                            {/* Floating UI Cards */}
-                            <GlassCard className="absolute top-10 -left-10 w-48 !p-4 animate-bounce delay-700 z-20 border-brand-red/10">
-                                <div className="flex items-center gap-3">
+                            {/* Floating UI Cards - hidden on very small screens */}
+                            <GlassCard className="hidden sm:block absolute top-10 -left-4 lg:-left-10 w-40 lg:w-48 !p-3 lg:!p-4 animate-bounce delay-700 z-20 border-brand-red/10">
+                                <div className="flex items-center gap-2 lg:gap-3">
                                     <div className="w-2 h-2 bg-brand-red rounded-full animate-ping"></div>
-                                    <span className="text-sm font-bold text-brand-dark">System Online</span>
+                                    <span className="text-xs lg:text-sm font-bold text-brand-dark">System Online</span>
                                 </div>
                             </GlassCard>
-                            <GlassCard className="absolute bottom-20 -right-4 w-56 !p-4 animate-bounce delay-100 z-20 border-brand-red/10">
-                                <div className="flex items-center gap-3">
+                            <GlassCard className="hidden sm:block absolute bottom-16 lg:bottom-20 -right-2 lg:-right-4 w-44 lg:w-56 !p-3 lg:!p-4 animate-bounce delay-100 z-20 border-brand-red/10">
+                                <div className="flex items-center gap-2 lg:gap-3">
                                     <div className="flex -space-x-2">
                                         {[1, 2, 3].map(i => (
-                                            <div key={i} className="w-8 h-8 rounded-full bg-brand-offWhite border border-white flex items-center justify-center text-xs font-bold text-brand-red">
+                                            <div key={i} className="w-6 lg:w-8 h-6 lg:h-8 rounded-full bg-brand-offWhite border border-white flex items-center justify-center text-xs font-bold text-brand-red">
                                                 Dr
                                             </div>
                                         ))}
                                     </div>
-                                    <span className="text-sm text-brand-dark/70">500+ Experts</span>
+                                    <span className="text-xs lg:text-sm text-brand-dark/70">500+ Experts</span>
                                 </div>
                             </GlassCard>
                         </div>
@@ -149,20 +149,20 @@ const Home = () => {
             </div>
 
             {/* CTA Section */}
-            <section className="relative py-32 text-center overflow-hidden bg-brand-offWhite">
+            <section className="relative py-16 sm:py-24 lg:py-32 text-center overflow-hidden bg-brand-offWhite">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-red/5"></div>
-                <div className="container mx-auto px-6 relative z-10">
+                <div className="container mx-auto px-4 sm:px-6 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-5xl md:text-6xl font-bold mb-8 text-brand-dark">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 text-brand-dark">
                             Ready to <span className="text-brand-red">Join?</span>
                         </h2>
                         <div className="flex justify-center gap-6">
                             <Link to="/register">
-                                <NeonButton className="px-10 py-5 text-xl">
+                                <NeonButton className="px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 text-base sm:text-lg lg:text-xl">
                                     Join the Network
                                 </NeonButton>
                             </Link>
