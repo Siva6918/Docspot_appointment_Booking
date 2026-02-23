@@ -41,9 +41,9 @@ app.use('/uploads', express.static('uploads'));
 // =========================
 // Routes
 // =========================
-app.use('/api/user', require('./routes/userRoutes'));
-app.use('/api/doctor', require('./routes/doctorRoutes'));
-app.use('/api/appointment', require('./routes/appointmentRoutes'));
+app.use('/user', require('./routes/userRoutes'));
+app.use('/doctor', require('./routes/doctorRoutes'));
+app.use('/appointment', require('./routes/appointmentRoutes'));
 
 // =========================
 // Error Handler
