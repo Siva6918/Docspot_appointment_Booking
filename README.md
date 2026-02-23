@@ -22,16 +22,22 @@ This project demonstrates real-world full-stack engineering using industry-stand
 ## 🖼️ Screenshots
 
 ### 🏠 Landing Page (Metaverse Theme)
-![Landing Page](./assets/landing.png)
+![Landing Page](./Home.png)
 
 ### 🔐 Login / Signup Interface
-![Login Page](./assets/login.png)
+![Login Page](./LogIn.png)
 
 ### 👨‍⚕️ Apply as Doctor
-![Doctor Application](./assets/apply-doctor.png)
+![Doctor Application](./ApplyDoctor.png)
+
+### 📊 User Dashboard
+![Admin Dashboard](./User.png)
+
+### 📊 Doctor Dashboard
+![Admin Dashboard](./Doctor.png)
 
 ### 📊 Admin Dashboard
-![Admin Dashboard](./assets/admin-dashboard.png)
+![Admin Dashboard](./Admin.png)
 
 ---
 
@@ -169,4 +175,5 @@ npm run dev
 Frontend runs on:
 
 http://localhost:5173
+
 
