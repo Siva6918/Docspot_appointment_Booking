@@ -1,4 +1,13 @@
-﻿# Docspot_appointment_Booking
+## ADMIN LOGIN:
+---
+ **Email:** vasanthavenkatasiva@gmail.com
+ 
+ **Password:** Siva@262004
+ 
+--- 
+
+# Docspot_appointment_Booking
+
  DocSpot is a full-stack MERN application that enables patients to book doctor appointments seamlessly within a modern, futuristic healthcare ecosystem.
 
 The platform features secure authentication, doctor onboarding, appointment management, and role-based dashboards — all designed with a metaverse-inspired red & white UI system.
@@ -175,5 +184,6 @@ npm run dev
 Frontend runs on:
 
 http://localhost:5173
+
 
 
